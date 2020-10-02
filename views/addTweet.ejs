@@ -1,0 +1,33 @@
+<%- include("./components/header")   %>
+
+
+<div class="row justify-content-center">
+<h4>Add Tweet</h4>
+</div>
+
+<div class="row justify-content-center">
+<form method="POST" action="/addTweet" class="form col-6 flex-column">
+    <label class="sr-only" for="FormInputName2">Title</label>
+    <input name="title" type="text" class="form-control mb-2 mr-sm-2" id="FormInputName2"
+        placeholder="Title">
+    <% if(error.title) {%>
+    <p><%= error.title.properties.message %></p>
+    <% } %>
+    <label class="sr-only" for="FormInputGroupUsername2">Tweet</label>
+    <div class="input-group mb-2 mr-sm-2 d-block">
+        <div class="input-group-prepend">
+        </div>
+        <textarea name="tweet" type="text" class="form-control" id="FormInputGroupUsername2" placeholder="Tweet"></textarea>
+        <% if(error.tweet) {%>
+        <p><%= error.tweet.properties.message %></p>
+        <% } %>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    <a href=/tweet class="btn btn-info float-right mb-2">Back to home</a>
+</form>
+</div>
+<script>
+    document.title = "Add Tweet"
+</script>
+
+<%- include("./components/footer")    %>

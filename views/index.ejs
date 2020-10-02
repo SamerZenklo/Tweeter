@@ -1,0 +1,30 @@
+<div class="container">
+    <%- include("./components/header")   %>
+
+    <div class="text-center">
+        <h3>There are <span style="color: brown;"><%= data.length %></span> Tweets</h3>
+        <a href=/addTweet class="btn btn-success">Add Tweet</a>
+    </div>
+    <% if(data.length > 0){ %>
+    <div class="row justify-content-center">
+        <% data.forEach(tweet => { %>
+
+        <div class="card border-info m-3" style="max-width: 18rem;">
+            <div class="card-header"><%= tweet.title %></div>
+            <div class="card-body text-info">
+                <h5 class="card-title"><%= tweet.tweet %></h5>
+                <p class="card-text"><%= tweet.createdAt %></p>
+                <a class="btn btn-primary" href=/tweet/<%= tweet.id %>>see more</a>
+            </div>
+        </div>
+
+
+        <% }) %>
+        <% } else { %>
+        <h1 style="text-align: center; color: red;">There are no tweets</h1>
+        <% } %></div>
+</div>
+<script>
+    document.title = "Welcome to  Tweet"
+</script>
+<%- include("./components/footer")    %>

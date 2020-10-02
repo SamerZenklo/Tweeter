@@ -1,0 +1,29 @@
+<%- include("./components/header")  %>
+<div class="row justify-content-center">
+<h3>Edit a Tweet</h3>
+</div>
+
+<div class="row justify-content-center">
+<form method="POST" class="form justify-content-center" action=/tweet/edit/<%= tweet.id %>>
+    <label class="sr-only" for="FormInputName2">Title</label>
+    <input name="title" type="text" class="form-control mb-2 mr-sm-2" id="FormInputName2"
+        value=<%= tweet.title %>>
+
+    <label class="sr-only" for="FormInputGroupUsername2">Tweet</label>
+    <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+        </div>
+        <textarea name="tweet" cols="15" rows="4" class="form-control" id="FormInputGroupUsername2"
+        ><%= tweet.tweet %></textarea>
+
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    
+</form>
+</div>
+
+<script>
+    document.title = "Edit Tweet"
+</script>
+
+<%- include("./components/footer")  %>

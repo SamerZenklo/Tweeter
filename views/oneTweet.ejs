@@ -1,0 +1,23 @@
+<%- include("./components/header")   %>
+
+<div class="row justify-content-center">
+    <div>
+        <div class="card border-info mb-3" style="max-width: 18rem;">
+            <div class="card-header"><%= tweet.title %></div>
+            <div class="card-body text-info">
+                <h5 class="card-title"><%= tweet.tweet %></h5>
+                <a class="btn btn-danger" href=/delete/<%= tweet.id %>>Delete</a>
+                <a class="btn btn-primary float-right" href=/tweet/edit/<%= tweet.id %>>Edit</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row justify-content-center">
+    <a href=/tweet class="btn btn-info mt-3">Back to home</a>
+</div>
+
+<script>
+    document.title = "Show One Tweet"
+</script>
+<%- include("./components/footer")    %>
